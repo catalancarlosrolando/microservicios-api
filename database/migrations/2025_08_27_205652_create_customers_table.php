@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('first_name',100);
             $table->string('last_name',100);
             $table->string('email',100)->unique();
-            $table->string('phone',100)->nullValue();
-            $table->date('birth_date')->nullValue();
+            $table->string('phone',100)->nullable();
+            $table->date('birth_date')->nullable();
             $table->boolean('is_premium')->default(false);
             $table->timestamps();
         });

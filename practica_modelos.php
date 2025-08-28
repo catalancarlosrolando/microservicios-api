@@ -17,6 +17,7 @@ $categoria = Customer::create(
     "first_name"=> "Carlos",
     "last_name"=>"Catalan",
     "email"=> "carloscatalan@gmail.com",
+    "phone"=> "26453553",
     ]
     );
 
