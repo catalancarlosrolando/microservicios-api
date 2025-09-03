@@ -28,6 +28,12 @@ class Category extends Model
     protected $casts = [
         'is_active' => 'boolean',
     ];
+
+    // Relación: Una categoría tiene muchos productos
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
 
 // el modelo tiene una funcionalidad que es "use HasFactory";
