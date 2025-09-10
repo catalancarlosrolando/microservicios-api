@@ -32,7 +32,10 @@ $prod = Product::find(1);
 
 echo "producto numero 1:", $prod->name ,"\n";
 
-$customer = Customer::where("first_name", "like","Carlos")->get();
+// buscando el customer por nombre ("tener en cuenta que el % dentro del la cadena buscada es para que no distinga mayusculas")
+//tambien busca coindicencias por lo cual tambien puede ser algo parecido al nombre.
+
+$customer = Customer::where("first_name", "like","%los%")->get();
 
 foreach ($customer as $custom){
     echo "Nombre: ", $custom->first_name,"\n";
@@ -89,7 +92,7 @@ Category::where("name","tenetur")->update(["name" => "Plastico"]);
 
 
  //Ordenado por precio y con un limite de 5
-
+echo "--ORDENADO ASCENDENTE--\n";
  $precioOrden = Product::orderBy("price")->limit(5)->get();
 
  foreach ($precioOrden as $precio){
