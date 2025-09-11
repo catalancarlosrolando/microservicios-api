@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\FileController;
+use App\Http\Controllers\API\StudentController;
 
 Route::get('/ping', fn() => response()->json([
     'success' => true,
@@ -40,4 +41,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/download/{filename}', [FileController::class, 'download']);
         Route::delete('/{filename}', [FileController::class, 'delete']);
     });
+
+    // Rutas para manejo de estudiantes
+    Route::apiResource('students', StudentController::class);
 });
