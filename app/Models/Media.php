@@ -32,11 +32,11 @@ class Media extends Model
 
     public function posts(): BelongsToMany
     {
-        return $this->belongsToMany(Post::class, 'post_medias')
+        return $this->belongsToMany(Post::class, 'post_medias');
     }
 
     public function channels(): BelongsToMany
     {
-        return $this->belongsToMany(Channel::class, 'channel_medias')
+        return $this->belongsToMany(Channel::class, 'channel_medias');
     }
 }

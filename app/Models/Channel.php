@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\PostStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -50,7 +51,7 @@ class Channel extends Model
      */
     public function posts(): BelongsToMany
     {
-        return $this->belongsToMany(Post::class, 'post_channels')
+        return $this->belongsToMany(Post::class, 'post_channels');
     }
 
     /**
@@ -58,7 +59,7 @@ class Channel extends Model
      */
     public function publishedPosts(): BelongsToMany
     {
-        return $this->posts()->where('status', PostStatus::PUBLISHED);
+        return $this->posts()->where('status', PostStatus::ARCHIVED);
     }
 
     /**
@@ -66,6 +67,6 @@ class Channel extends Model
      */
     public function medias(): BelongsToMany
     {
-        return $this->belongsToMany(Media::class, 'channel_medias')
+        return $this->belongsToMany(Media::class, 'channel_medias');
     }
 }

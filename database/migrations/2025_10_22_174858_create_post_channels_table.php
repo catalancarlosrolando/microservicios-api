@@ -17,7 +17,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Un post solo puede estar una vez en cada canal
-            $table->unique(['post_id', 'channel_id']);
+            $table->primary(['post_id', 'channel_id']);
         });
     }
 

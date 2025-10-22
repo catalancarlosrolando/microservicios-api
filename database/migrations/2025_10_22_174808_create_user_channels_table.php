@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
 
             // Un usuario solo puede estar una vez en cada canal
-            $table->unique(['user_id', 'channel_id']);
+            $table->primary(['user_id', 'channel_id']);
 
             // Índice para buscar usuarios aprobados de un canal
             $table->index(['channel_id', 'is_approved']);

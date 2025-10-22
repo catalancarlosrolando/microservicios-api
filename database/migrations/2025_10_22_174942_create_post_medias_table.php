@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->unique(['post_id', 'media_id']);
+            $table->primary(['post_id', 'media_id']);
         });
     }
 

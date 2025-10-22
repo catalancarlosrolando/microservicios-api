@@ -16,7 +16,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->unique(['channel_id', 'media_id']);
+            $table->primary(['channel_id', 'media_id']);
         });
     }
 
