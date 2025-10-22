@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 use App\Enums\MediaType;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -12,12 +12,12 @@ return new class extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');                        // Nombre del medio
-            $table->enum('type', MediaType::values()); // Tipo de medio
-            $table->json('configuration')->nullable();     // Configuración específica (JSON)
-            $table->text('semantic_context')->nullable();  // Contexto semántico para IA
-            $table->string('url_webhook')->nullable();     // URL para notificaciones
-            $table->boolean('is_active')->default(true);   // Medio activo/inactivo
+            $table->string('name');                         // Nombre del medio
+            $table->enum('type', MediaType::values());      // Tipo de medio
+            $table->json('configuration')->nullable();      // Configuración específica (JSON)
+            $table->text('semantic_context')->nullable();   // Contexto semántico para IA
+            $table->string('url_webhook')->nullable();      // URL para notificaciones
+            $table->boolean('is_active')->default(true);    // Medio activo/inactivo
 
             $table->timestamps();
 

@@ -8,8 +8,11 @@ return new class extends Migration
 {
     public function up(): void
     {
+
         Schema::create('user_channels', function (Blueprint $table) {
-            $table->id();
+            // Pivot table: use a composite primary key (user_id, channel_id)
+            // instead of an auto-incrementing id to avoid multiple primary keys
+            // when using databases like SQLite.
 
             // Las dos llaves foráneas que conectamos
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

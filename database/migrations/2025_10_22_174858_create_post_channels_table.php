@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('post_channels', function (Blueprint $table) {
-            $table->id();
+            //$table->id(); como es una tabla pivot no necesito un id incremental. para ello esta la clave primaria compuesta. 
 
             $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->foreignId('channel_id')->constrained()->onDelete('cascade');

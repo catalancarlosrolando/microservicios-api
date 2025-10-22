@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('channel_medias', function (Blueprint $table) {
-            $table->id();
+            //$table->id();
 
             $table->foreignId('channel_id')->constrained()->onDelete('cascade');
             $table->foreignId('media_id')->constrained()->onDelete('cascade');
